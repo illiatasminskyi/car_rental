@@ -18,7 +18,12 @@ namespace CarRental.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Catalog()
+        {
+            return View();
+        }
+
+        public IActionResult Car()
         {
             return View();
         }
