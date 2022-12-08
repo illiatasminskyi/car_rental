@@ -8,14 +8,17 @@ namespace CarRental.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        CarsContext db;
+        public HomeController(ILogger<HomeController> logger, CarsContext context)
         {
             _logger = logger;
+            db = context;
         }
 
+        
         public IActionResult Index()
         {
-            return View();
+            return View(db.Cars.ToList());
         }
 
         public IActionResult Catalog()
